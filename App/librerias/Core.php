@@ -20,14 +20,14 @@
             
             if(isset($url[0])){
                 // buscamos en controladores, si el controlador existe
-                if(file_exists('../App/Controladores/'.ucwords($url[0]).'.php')){
+                if(file_exists('../App/controladores/'.ucwords($url[0]).'.php')){
                     //Si existe, se configura como controlador por defecto
                     $this->controladorActual = ucwords($url[0]);
                     //eliminamos la primera posicion de $url
                     unset($url[0]);
                 }
             }
-            require_once '../App/Controladores/'.$this->controladorActual.'.php';
+            require_once '../App/controladores/'.$this->controladorActual.'.php';
             $this->controladorActual = new $this->controladorActual;
 
 
