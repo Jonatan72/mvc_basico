@@ -51,6 +51,7 @@
         public function getUrl(){
             if(isset($_GET['url'])){
                 $url = rtrim($_GET['url'],'/');     //limpiamos url por la derecha del /
+                $url = ltrim($_GET['url'],'/');     //limpiamos url por la izquierda del /, necesario para el funcionamiento en el nginx
                 $url = filter_var($url,FILTER_SANITIZE_URL);    //Elimina todos los caracteres excepto letras, dígitos y $- ...
                 $url = explode('/',$url);
                 return $url;
